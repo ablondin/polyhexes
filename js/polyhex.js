@@ -18,12 +18,15 @@ function HexCell(game, row, col) {
     this.sprite.inputEnabled = true;
     this.sprite.stillDown = false;
     this.sprite.events.onInputOver.add(hover, this);
-    this.sprite.events.onInputOut.add(out, this);
-    this.sprite.events.onInputDown.add(down, this);
-    this.sprite.events.onInputUp.add(up, this);
+    this.sprite.events.onInputOut.add(out);
+    this.sprite.events.onInputDown.add(down);
+    this.sprite.events.onInputUp.add(up);
 }
 
-function hover(sprite) {
+function hover(sprite, pointer) {
+    if (pointer.isDown) {
+        down(sprite);
+    }
     sprite.frame = 2;
 }
 

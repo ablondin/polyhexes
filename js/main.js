@@ -10,6 +10,7 @@ var game = new Phaser.Game(WIDTH, HEIGHT,
 // Preload
 function preload() {
     game.load.spritesheet('hexcell', 'images/tiles.png', 60, 60, 4);
+    game.stage.disableVisibilityChange = true;
 }
 
 // Create
