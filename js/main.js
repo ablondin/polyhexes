@@ -15,7 +15,7 @@ function preload() {
 
 // Create
 function create() {
-    grid = new HexGrid(game, 14, 20);
+    grid = new HexGrid(game, 5, 6);
     game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.refresh();
