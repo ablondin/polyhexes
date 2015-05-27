@@ -15,7 +15,20 @@ function preload() {
 
 // Create
 function create() {
-    grid = new HexGrid(game, 14, 20);
+    grid = new HexGrid(game, 5, 6);
+    game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.refresh();
+    game.input.onDown.add(gofull, this);
+}
+
+// Fullscreen
+function gofull() {
+    if (game.scale.isFullScreen) {
+        game.scale.stopFullScreen();
+    } else {
+        game.scale.startFullScreen(false);
+    }
 }
 
 // Update
